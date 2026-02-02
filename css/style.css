@@ -1,0 +1,1165 @@
+/* --- 1. DNA DA MARCA (Variáveis Globais) ---*/
+
+:root {
+    --bg-dark: #02060b;
+    --bg-panel: #0a111a;
+
+    --gold-primary: #c5a059;
+    --gold-hover: #e0b86a;
+    --gold-dim: rgba(197, 160, 89, 0.2);
+
+    --text-main: #e0e6ed;
+    --text-muted: #8b9bb4;
+
+    --glass: rgba(2, 6, 11, 0.85);
+    --blur: blur(12px);
+    --border-fine: 1px solid rgba(197, 160, 89, 0.15);
+
+    --color-up: #00ff9d;
+    --color-down: #ff3b30;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.brand-font {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- 2. MARKET INTELLIGENCE TICKER (Barra Topo) --- */
+
+.market-ticker {
+    background: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1001;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.market-ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-content {
+    display: flex;
+}
+
+.ticker-item {
+    padding: 0 40px;
+    line-height: 32px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ticker-item span {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.ticker-up {
+    color: var(--color-up);
+    margin-left: 5px;
+}
+
+.ticker-down {
+    color: var(--color-down);
+    margin-left: 5px;
+}
+
+.status-ok {
+    color: var(--color-up) !important;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* --- 3. HEADER "BANK GRADE" --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-bottom: var(--border-fine);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    cursor: default;
+}
+
+.logo-main {
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-main span {
+    color: var(--gold-primary);
+}
+
+.logo-sub {
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* Menu de Navegação */
+nav {
+    display: flex;
+    gap: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+/* Efeito Hover Dourado Sofisticado */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold-primary);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--gold-primary);
+}
+
+nav a:hover {
+    color: var(--gold-primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Botão Private Inquiry */
+.btn-inquiry {
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    background: transparent;
+    padding: 12px 30px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.btn-inquiry:hover {
+    background: var(--gold-primary);
+    color: #000;
+    box-shadow: 0 0 20px var(--gold-dim);
+}
+
+/* Responsivo Básico para o Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .logo-sub {
+        display: none;
+    }
+
+    /* Simplifica no mobile */
+    .market-ticker {
+        display: none;
+    }
+
+    /* Oculta ticker no mobile para limpar visual */
+}
+
+/* =========================================
+   4. HERO SECTION (TERMINAL)
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    /* Quase tela cheia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* Vídeo de Fundo */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(2, 6, 11, 0.95) 0%, rgba(2, 6, 11, 0.7) 50%, rgba(2, 6, 11, 0.4) 100%);
+    z-index: 2;
+}
+
+/* Layout do Conteúdo */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    /* Texto na esq, Terminal na dir */
+    gap: 80px;
+    align-items: center;
+}
+
+/* Texto Hero */
+.hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #fff;
+    margin: 0 0 25px 0;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+    border-left: 3px solid var(--gold-primary);
+    padding-left: 20px;
+}
+
+.hero-stats {
+    margin-top: 40px;
+    display: flex;
+    gap: 50px;
+}
+
+.stat b {
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+    font-family: 'Cinzel';
+}
+
+.stat span {
+    font-size: 0.7rem;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 5. O TERMINAL DE COMANDO (GLASSMORPHISM) --- */
+
+.trade-terminal {
+    background: rgba(10, 15, 25, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--gold-primary);
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00ff9d;
+    border-radius: 50%;
+    margin-right: 5px;
+    box-shadow: 0 0 10px #00ff9d;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Abas */
+.terminal-tabs {
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.tab-btn.active {
+    color: var(--gold-primary);
+    border-bottom: 2px solid var(--gold-primary);
+    background: rgba(197, 160, 89, 0.05);
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+    padding: 30px;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.active-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-label {
+    font-size: 0.65rem;
+    color: var(--gold-primary);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.terminal-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 15px;
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.terminal-input:focus {
+    border-color: var(--gold-primary);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.terminal-action-btn {
+    background: var(--gold-primary);
+    color: #000;
+    border: none;
+    padding: 15px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.terminal-action-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 15px var(--gold-primary);
+}
+
+.terminal-footer {
+    margin-top: 15px;
+    font-size: 0.6rem;
+    color: #555;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 0 auto 30px;
+        border: none;
+        border-bottom: 3px solid var(--gold-primary);
+        padding-bottom: 15px;
+        padding-left: 0;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* --- 6. SEÇÃO LEGAL SHIELD (JURÍDICO) --- */
+
+.legal-section {
+    padding: 100px 5%;
+    background-color: var(--bg-dark);
+    position: relative;
+}
+
+/* Títulos de Seção (Padrão para usar em outras partes) */
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-subtitle {
+    color: var(--gold-primary);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.header-line {
+    width: 60px;
+    height: 3px;
+    background: var(--gold-primary);
+    margin: 25px auto 0;
+}
+
+/* O Grid dos Cartões */
+.legal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O Cartão Blindado */
+.legal-card {
+    background: linear-gradient(145deg, #0a0f16 0%, #05080c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+}
+
+/* Efeito Hover: O cartão "acende" e sobe */
+.legal-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Ícones Metálicos */
+.icon-box {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+
+.legal-card:hover .icon-box {
+    color: var(--gold-primary);
+    text-shadow: 0 0 15px var(--gold-dim);
+}
+
+.legal-card h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.legal-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.legal-card strong {
+    color: var(--text-main);
+}
+
+/* Lista de Check (Vzinhos) */
+.legal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+}
+
+.legal-list li {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legal-list i {
+    color: var(--gold-primary);
+    font-size: 0.7rem;
+}
+
+/* O SELO "SECURE" (Estilo Militar/Bancário) */
+.secure-badge {
+    position: absolute;
+    top: 20px;
+    right: -32px;
+    background: var(--gold-primary);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .legal-grid {
+        grid-template-columns: 1fr;
+        /* 1 coluna no celular */
+        gap: 30px;
+    }
+}
+
+/* --- 7. SEÇÃO PILARES (OPERATIONS, COMPLIANCE, INTEL) --- */
+.pillars-section {
+    background-color: #05090e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pillars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pillar-item {
+    padding: 80px 40px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    /* Linha divisória fina */
+    transition: 0.3s;
+    position: relative;
+}
+
+.pillar-item:last-child {
+    border-right: none;
+}
+
+.pillar-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Ícones Grandes e Minimalistas */
+.pillar-icon {
+    font-size: 2.5rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+    transition: 0.4s;
+}
+
+.pillar-item:hover .pillar-icon {
+    color: var(--gold-primary);
+    transform: scale(1.1);
+}
+
+.pillar-item h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.pillar-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* Link "Técnico" com Seta */
+.pillar-link {
+    color: var(--gold-primary);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.pillar-link:hover {
+    opacity: 1;
+    margin-left: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .pillars-container {
+        grid-template-columns: 1fr;
+        /* Vira lista vertical no celular */
+    }
+
+    .pillar-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 60px 20px;
+    }
+}
+
+/* --- 8. GLOBAL FOOTER (RODAPÉ) --- */
+.global-footer {
+    background-color: #02060b;
+    border-top: 3px solid var(--gold-primary);
+    color: #8b9bb4;
+    font-size: 0.85rem;
+}
+
+.footer-main {
+    padding: 80px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+/* Coluna da Marca */
+.footer-logo {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-logo span {
+    color: var(--gold-primary);
+}
+
+.brand-desc {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 300px;
+}
+
+.brand-desc strong {
+    color: #fff;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 10px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn:hover {
+    background: var(--gold-primary);
+    color: #000;
+    border-color: var(--gold-primary);
+}
+
+/* Títulos das Colunas */
+.footer-col h4 {
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Links Simples */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #8b9bb4;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+    color: var(--gold-primary);
+    padding-left: 5px;
+}
+
+/* Lista de Hubs (O Diretório) */
+.hub-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hub-list li {
+    margin-bottom: 15px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 15px;
+    transition: 0.3s;
+}
+
+.hub-list li:hover {
+    border-left-color: var(--gold-primary);
+}
+
+.hub-city {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.hub-type {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Barra de Sistema (Final) */
+.system-bar {
+    background: #000;
+    padding: 15px 5%;
+    font-size: 0.65rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sys-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sys-status strong {
+    color: #00ff9d;
+}
+
+.pulse-dot-small {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #00ff9d;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sys-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* --- 9. MODAL PRIVATE INQUIRY --- */
+
+.modal-overlay {
+    display: none;
+    /* Começa escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* Fundo escuro focado */
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    /* Fica em cima de tudo */
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-terminal {
+    background: rgba(10, 15, 25, 0.95);
+    border: 1px solid var(--gold-primary);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.2);
+}
+
+.modal-header {
+    background: rgba(197, 160, 89, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gold-primary);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--color-down);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-instruction {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+/* --- 10. SEÇÃO DO MAPA GLOBAL --- */
+.global-map-section {
+    padding: 100px 5%;
+    background: radial-gradient(circle at center, #0a111a 0%, #02060b 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Container do Mapa (Mantém a proporção) */
+.map-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 16/9; /* Garante que não distorce */
+    border: 1px solid rgba(255,255,255,0.05); /* Moldura sutil */
+    background: rgba(255,255,255,0.02); /* Fundo leve se não tiver imagem */
+    border-radius: 4px;
+}
+
+.map-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    
+    opacity: 0.6;
+}
+
+/* Os Pontos (Hubs) */
+.map-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* O Ponto Central */
+.point-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold-primary);
+    position: relative;
+    z-index: 2;
+}
+
+/* O Anel que Pulsa (Radar) */
+.pulse-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--gold-primary);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulse-radar 2s infinite;
+}
+
+@keyframes pulse-radar {
+    0% { width: 8px; height: 8px; opacity: 1; }
+    100% { width: 40px; height: 40px; opacity: 0; }
+}
+
+/* Rótulo da Cidade */
+.point-label {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0.8);
+    padding: 2px 6px;
+    border-radius: 2px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* Se quiser que apareça sempre, mude opacity para 0.7 */
+.map-point:hover .point-label {
+    opacity: 1;
+    top: -30px;
+}
+
+/* Estatísticas abaixo do mapa */
+.map-stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 40px;
+}
+
+.map-stat-item { text-align: center; }
+
+.map-stat-item h3 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+    font-family: 'Cinzel', serif;
+}
+
+.map-stat-item p {
+    color: var(--gold-primary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .map-container { height: 300px; aspect-ratio: auto; }
+    .map-stats { flex-direction: column; gap: 30px; }
+}
