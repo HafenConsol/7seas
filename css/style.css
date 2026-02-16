@@ -836,6 +836,48 @@ nav a:hover::after {
     border-color: var(--gold-primary);
 }
 
+/* Telefone */
+
+.brand-contacts {
+    margin-top: 30px; /* Afasta das redes sociais */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória fina */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-title {
+    font-size: 0.65rem;
+    color: #555; /* Cinza escuro para o rótulo */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contact-row {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem; /* Tamanho bom de ler */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.contact-row i {
+    color: var(--gold-primary); /* O ícone dourado */
+    font-size: 0.8rem;
+    margin-right: 10px;
+    width: 20px; /* Mantém o alinhamento se o ícone mudar */
+    text-align: center;
+}
+
+.contact-row:hover {
+    color: var(--gold-primary); /* Tudo fica dourado no hover */
+    padding-left: 5px; /* Leve movimento para a direita */
+}
+
 /* Títulos das Colunas */
 .footer-col h4 {
     color: #fff;
@@ -1129,37 +1171,4 @@ section {
 .map-point:hover .point-label {
     opacity: 1;
     top: -30px;
-}
-
-/* Estatísticas abaixo do mapa */
-.map-stats {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 60px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 40px;
-}
-
-.map-stat-item { text-align: center; }
-
-.map-stat-item h3 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin: 0;
-    font-family: 'Cinzel', serif;
-}
-
-.map-stat-item p {
-    color: var(--gold-primary);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .map-container { height: 300px; aspect-ratio: auto; }
-    .map-stats { flex-direction: column; gap: 30px; }
 }
