@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7 SEAS | Sovereign Trade Governance</title>
 
+    <!-- whatsapp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.7seasglobal.eu/">
+    <meta property="og:title" content="7 SEAS | Sovereign Trade Governance">
+    <meta property="og:description" content="The strategic trading arm of Hafen Consolidators. Engineering commerce through sovereign legal frameworks and high-precision logistics.">
+    <meta property="og:image" content="https://www.7seasglobal.eu/img/og-image.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="7 SEAS | Sovereign Trade Governance">
+    <meta name="twitter:description" content="The strategic trading arm of Hafen Consolidators.">
+    <meta name="twitter:image" content="https://www.7seasglobal.eu/img/og-image.jpg">
+
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="icon" type="image/png" href="img/favicon.png">
-
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -19,41 +29,41 @@
 
 <body>
 
-    <!-- Market Ticker -->
-
-    <div class="market-ticker">
-        <div class="ticker-track">
-
-            <div class="ticker-content">
-                <div class="ticker-item">USD/BRL <span id="usd-price">Loading...</span> <i
-                        class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">EUR/BRL <span id="eur-price">Loading...</span> <i
-                        class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">BTC/USD <span id="btc-price">Loading...</span> <i
-                        class="fas fa-caret-down ticker-down"></i></div>
-                <div class="ticker-item">SHANGHAI INDEX <span>2104</span> <i class="fas fa-caret-up ticker-up"></i>
-                </div>
-                <div class="ticker-item">BRENT CRUDE <span>$82.40</span> <i class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">STATUS: <span class="status-ok">PORT OF SANTOS (OPERATIONAL)</span></div>
+    <div class="intermodal-banner" id="intermodalBanner">
+        <div class="container banner-content">
+            <div class="banner-text">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-i18n="banner_text">Meet us at Intermodal South America 2026! São Paulo, Brazil.</span>
             </div>
-
-            <div class="ticker-content">
-                <div class="ticker-item">USD/BRL <span id="usd-price-2">Loading...</span> <i
-                        class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">EUR/BRL <span id="eur-price-2">Loading...</span> <i
-                        class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">BTC/USD <span id="btc-price-2">Loading...</span> <i
-                        class="fas fa-caret-down ticker-down"></i></div>
-                <div class="ticker-item">SHANGHAI INDEX <span>2104</span> <i class="fas fa-caret-up ticker-up"></i>
-                </div>
-                <div class="ticker-item">BRENT CRUDE <span>$82.40</span> <i class="fas fa-caret-up ticker-up"></i></div>
-                <div class="ticker-item">STATUS: <span class="status-ok">PORT OF SANTOS (OPERATIONAL)</span></div>
+            <div class="banner-actions">
+                <a href="mailto:comercial@7seasglobal.com" class="btn-banner" data-i18n="banner_btn">Schedule a Meeting</a>
+                <button class="close-banner" onclick="document.getElementById('intermodalBanner').style.display='none'" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-
         </div>
     </div>
 
-    <!-- Header -->
+    <div class="market-ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <div class="ticker-item">USD/BRL <span id="usd-price">Loading...</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">EUR/BRL <span id="eur-price">Loading...</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">BTC/USD <span id="btc-price">Loading...</span> <i class="fas fa-caret-down ticker-down"></i></div>
+                <div class="ticker-item">SHANGHAI INDEX <span>2104</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">BRENT CRUDE <span>$82.40</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">STATUS: <span class="status-ok">PORT OF SANTOS (OPERATIONAL)</span></div>
+            </div>
+            <div class="ticker-content">
+                <div class="ticker-item">USD/BRL <span id="usd-price-2">Loading...</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">EUR/BRL <span id="eur-price-2">Loading...</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">BTC/USD <span id="btc-price-2">Loading...</span> <i class="fas fa-caret-down ticker-down"></i></div>
+                <div class="ticker-item">SHANGHAI INDEX <span>2104</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">BRENT CRUDE <span>$82.40</span> <i class="fas fa-caret-up ticker-up"></i></div>
+                <div class="ticker-item">STATUS: <span class="status-ok">PORT OF SANTOS (OPERATIONAL)</span></div>
+            </div>
+        </div>
+    </div>
 
     <header>
         <div class="logo-container brand-font">
@@ -61,49 +71,51 @@
             <div class="logo-sub">Strategic Arm of Hafen Consolidators</div>
         </div>
 
-       <nav>
-            <a href="#intelligence">Intelligence</a>
-            <a href="#compliance">Compliance</a>
-            <a href="#operations">Operations</a>
+        <nav>
+            <a href="#intelligence" data-i18n="nav_intel">Intelligence</a>
+            <a href="#compliance" data-i18n="nav_comp">Compliance</a>
+            <a href="#operations" data-i18n="nav_ops">Operations</a>
         </nav>
 
+        <div class="lang-selector">
+            <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" onclick="changeLanguage('es')">ES</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" onclick="changeLanguage('pt')">PT</button>
+        </div>
+
         <div class="cta-area">
-            <button class="btn-inquiry" onclick="openModal()">Private Inquiry</button>
+            <button class="btn-inquiry" onclick="openModal()" data-i18n="nav_cta">Private Inquiry</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-
     <section class="hero-section" id="intelligence">
-
         <div class="video-bg">
-            <video autoplay muted loop playsinline
-                poster="https://images.unsplash.com/photo-1494412574743-019475a77671?q=80&w=2070">
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1494412574743-019475a77671?q=80&w=2070">
                 <source src="img/hero.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
         </div>
 
         <div class="hero-content">
-
             <div class="hero-text">
-                <div class="hero-badge"><i class="fas fa-shield-alt"></i> UK ARBITRATION PROTECTED</div>
-                <h1>Sovereign Trade<br>Governance.</h1>
-                <p>The strategic trading arm of Hafen Consolidators. Orchestrating global logistics with legal precision
-                    and swiss-grade privacy.</p>
+                <div class="hero-badge"><i class="fas fa-shield-alt"></i> <span data-i18n="hero_badge">UK ARBITRATION PROTECTED</span></div>
+                <h1 data-i18n="hero_title">Sovereign Trade<br>Governance.</h1>
+                <p data-i18n="hero_desc">The strategic trading arm of Hafen Consolidators. Orchestrating global logistics with legal precision and swiss-grade privacy.</p>
 
                 <div class="hero-stats">
                     <div class="stat">
                         <b>$2.4B</b>
-                        <span>Assets Managed</span>
+                        <span data-i18n="hero_stat1">Assets Managed</span>
                     </div>
                     <div class="stat">
                         <b>100%</b>
-                        <span>Compliance Rate</span>
+                        <span data-i18n="hero_stat2">Compliance Rate</span>
                     </div>
                 </div>
             </div>
-
+            
             <div class="trade-terminal">
                 <div class="terminal-header">
                     <span><i class="fas fa-network-wired"></i> 7S-TERMINAL v2.0</span>
@@ -114,78 +126,67 @@
 
                 <div class="terminal-tabs">
                     <button class="tab-btn active" onclick="openTab(event, 'track')">
-                        <i class="fas fa-crosshairs"></i> TRACKING
+                        <i class="fas fa-crosshairs"></i> <span data-i18n="term_track">TRACKING</span>
                     </button>
                     <button class="tab-btn" onclick="openTab(event, 'calc')">
-                        <i class="fas fa-calculator"></i> FREIGHT CALC
+                        <i class="fas fa-calculator"></i> <span data-i18n="term_calc">FREIGHT CALC</span>
                     </button>
                 </div>
 
                 <div id="track" class="tab-content active-content">
-                    <p class="input-label">ENTER CONTAINER OR BL NUMBER</p>
+                    <p class="input-label" data-i18n="term_enter_bl">ENTER CONTAINER OR BL NUMBER</p>
                     <div class="input-group">
-                        <input type="text" id="trackInput" placeholder="HFN-2026-XXXXXXXX" class="terminal-input">
+                        <input type="text" id="trackInput" placeholder="HFN-2026-XXXXXXXX" class="terminal-input" data-i18n-placeholder="term_ph_bl">
                         <button class="terminal-action-btn" onclick="simulateTracking()"><i class="fas fa-search"></i>
-                            LOCATE</button>
+                            <span data-i18n="term_locate">LOCATE</span></button>
                     </div>
 
-                    <div id="trackResult"
-                        style="display:none; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                        <p style="color: #00ff9d; font-size: 0.8rem; margin-bottom: 5px;"><i
-                                class="fas fa-check-circle"></i> CARGO FOUND</p>
-                        <p style="color: #fff; font-size: 0.9rem;">LOCATION: <b
-                                style="color: var(--gold-primary);">NORTH ATLANTIC (EN ROUTE)</b></p>
-                        <p style="color: #888; font-size: 0.7rem;">ETA: ROTTERDAM (3 DAYS)</p>
+                    <div id="trackResult" style="display:none; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                        <p style="color: #00ff9d; font-size: 0.8rem; margin-bottom: 5px;"><i class="fas fa-check-circle"></i> <span data-i18n="term_cargo_found">CARGO FOUND</span></p>
+                        <p style="color: #fff; font-size: 0.9rem;"><span data-i18n="term_loc">LOCATION:</span> <b style="color: var(--gold-primary);" data-i18n="term_en_route">NORTH ATLANTIC (EN ROUTE)</b></p>
+                        <p style="color: #888; font-size: 0.7rem;" data-i18n="term_eta">ETA: ROTTERDAM (3 DAYS)</p>
                     </div>
 
                     <div class="terminal-footer">
-                        <i class="fas fa-lock"></i> ENCRYPTED CONNECTION
+                        <i class="fas fa-lock"></i> <span data-i18n="term_encrypted">ENCRYPTED CONNECTION</span>
                     </div>
                 </div>
 
                 <div id="calc" class="tab-content">
-                    <p class="input-label">DIMENSIONS (CM) - L x W x H</p>
+                    <p class="input-label" data-i18n="term_dim">DIMENSIONS (CM) - L x W x H</p>
                     <div class="calc-grid">
                         <input type="number" id="dimL" placeholder="L" class="terminal-input small">
                         <input type="number" id="dimW" placeholder="W" class="terminal-input small">
                         <input type="number" id="dimH" placeholder="H" class="terminal-input small">
                     </div>
                     <button class="terminal-action-btn" onclick="calculateFreight()"><i class="fas fa-cog"></i>
-                        CALCULATE</button>
+                        <span data-i18n="term_calculate">CALCULATE</span></button>
 
                     <div id="calcResult" style="display:none; margin-top: 20px; text-align: center;">
-                        <span style="color: #888; font-size: 0.7rem;">CHARGEABLE WEIGHT (AIR)</span>
-                        <div
-                            style="font-size: 1.5rem; color: var(--gold-primary); font-family: 'Cinzel'; margin-top: 5px;">
+                        <span style="color: #888; font-size: 0.7rem;" data-i18n="term_chargeable">CHARGEABLE WEIGHT (AIR)</span>
+                        <div style="font-size: 1.5rem; color: var(--gold-primary); font-family: 'Cinzel'; margin-top: 5px;">
                             <span id="weightValue">0.00</span> KG
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Legal Section -->
-
     <section class="legal-section" id="compliance">
         <div class="container">
-
             <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">JURISDICTION & COMPLIANCE</span>
-                <h2>Sovereign Legal Framework</h2>
+                <span class="section-subtitle" data-i18n="leg_sub">JURISDICTION & COMPLIANCE</span>
+                <h2 data-i18n="leg_title">Sovereign Legal Framework</h2>
                 <div class="header-line"></div>
             </div>
 
             <div class="legal-grid">
-
                 <div class="legal-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="secure-badge">SECURE</div>
-                    <div class="icon-box">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>UK Arbitration</h3>
-                    <p>
+                    <div class="secure-badge" data-i18n="leg_badge">SECURE</div>
+                    <div class="icon-box"><i class="fas fa-gavel"></i></div>
+                    <h3 data-i18n="leg_c1_title">UK Arbitration</h3>
+                    <p data-i18n="leg_c1_desc">
                         Disputes are subject to the <strong>LCIA (London Court of International Arbitration)</strong>.
                         Your capital is protected under English Law, ensuring neutrality and speed.
                     </p>
@@ -196,12 +197,10 @@
                 </div>
 
                 <div class="legal-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="secure-badge">SECURE</div>
-                    <div class="icon-box">
-                        <i class="fas fa-globe-europe"></i>
-                    </div>
-                    <h3>Global Governance</h3>
-                    <p>
+                    <div class="secure-badge" data-i18n="leg_badge">SECURE</div>
+                    <div class="icon-box"><i class="fas fa-globe-europe"></i></div>
+                    <h3 data-i18n="leg_c2_title">Global Governance</h3>
+                    <p data-i18n="leg_c2_desc">
                         Operations strictly governed by <strong>Incoterms® 2020</strong> (ICC Paris).
                         Strategic conflicts resolved via <strong>SIAC (Singapore)</strong> protocols for Asian routes.
                     </p>
@@ -212,59 +211,51 @@
                 </div>
 
                 <div class="legal-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="secure-badge">SECURE</div>
-                    <div class="icon-box">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Brazilian Sovereignty</h3>
-                    <p>
+                    <div class="secure-badge" data-i18n="leg_badge">SECURE</div>
+                    <div class="icon-box"><i class="fas fa-balance-scale"></i></div>
+                    <h3 data-i18n="leg_c3_title">Brazilian Sovereignty</h3>
+                    <p data-i18n="leg_c3_desc">
                         Full adherence to <strong>Lei 12.846/13 (Anti-Corruption)</strong>.
-                        Local arbitration via <strong>CAM-CCBC</strong> and compliance under <strong>RFB/OEA</strong>
-                        standards.
+                        Local arbitration via <strong>CAM-CCBC</strong> and compliance under <strong>RFB/OEA</strong> standards.
                     </p>
                     <ul class="legal-list">
                         <li><i class="fas fa-check"></i> Lei Anticorrupção</li>
                         <li><i class="fas fa-check"></i> Receita Federal OEA</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Pillars Section -->
-
     <section class="pillars-section" id="operations">
         <div class="pillars-container">
-
             <div class="pillar-item" data-aos="fade-up" data-aos-delay="0">
                 <div class="pillar-icon"><i class="fas fa-shipping-fast"></i></div>
-                <h3>Operations</h3>
-                <p>High-precision logistics executing complex multimodal routes across 6 continents.</p>
-                <a href="#global-map" class="pillar-link">VIEW ROUTES <i class="fas fa-arrow-right"></i></a>
+                <h3 data-i18n="pil_c1_title">Operations</h3>
+                <p data-i18n="pil_c1_desc">High-precision logistics executing complex multimodal routes across 6 continents.</p>
+                <a href="#global-map" class="pillar-link"><span data-i18n="pil_btn_routes">VIEW ROUTES</span> <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="pillar-item" data-aos="fade-up" data-aos-delay="150">
                 <div class="pillar-icon"><i class="fas fa-file-contract"></i></div>
-                <h3>Compliance</h3>
-                <p>End-to-end bureaucratic governance, ensuring zero-risk customs clearance.</p>
-                <a href="#governance-docs" class="pillar-link">LEGAL SPECS <i class="fas fa-arrow-right"></i></a>
+                <h3 data-i18n="pil_c2_title">Compliance</h3>
+                <p data-i18n="pil_c2_desc">End-to-end bureaucratic governance, ensuring zero-risk customs clearance.</p>
+                <a href="#governance-docs" class="pillar-link"><span data-i18n="pil_btn_specs">LEGAL SPECS</span> <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="pillar-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="pillar-icon"><i class="fas fa-brain"></i></div>
-                <h3>Intelligence</h3>
-                <p>Data-driven market analysis to optimize tax loads and transit times.</p>
-                <a href="#" onclick="openModal(); return false;" class="pillar-link">ACCESS DATA <i class="fas fa-arrow-right"></i></a>
+                <h3 data-i18n="pil_c3_title">Intelligence</h3>
+                <p data-i18n="pil_c3_desc">Data-driven market analysis to optimize tax loads and transit times.</p>
+                <a href="#" onclick="openModal(); return false;" class="pillar-link"><span data-i18n="pil_btn_data">ACCESS DATA</span> <i class="fas fa-arrow-right"></i></a>
             </div>
-
         </div>
     </section>
 
     <section class="global-map-section" id="global-map">
         <div class="map-header text-center">
-            <span class="section-subtitle">LIVE OPERATIONS</span>
-            <h2>Global Connectivity</h2>
+            <span class="section-subtitle" data-i18n="map_sub">LIVE OPERATIONS</span>
+            <h2 data-i18n="map_title">Global Connectivity</h2>
             <div class="header-line"></div>
         </div>
 
@@ -272,72 +263,52 @@
             <img src="img/world-map.jpg" alt="Global Routes" class="map-bg">
             
             <div class="map-point" style="top: 53%; left: 27%;">
-                <div class="pulse-ring"></div>
-                <div class="point-dot"></div>
-                <div class="point-label">PANAMA (HQ)</div>
+                <div class="pulse-ring"></div><div class="point-dot"></div>
+                <div class="point-label" data-i18n="map_hq">PANAMA (HQ)</div>
             </div>
 
             <div class="map-point" style="top: 31%; left: 47%;">
-                <div class="pulse-ring"></div>
-                <div class="point-dot"></div>
-                <div class="point-label">LONDON</div>
+                <div class="pulse-ring"></div><div class="point-dot"></div>
+                <div class="point-label" data-i18n="map_london">LONDON</div>
             </div>
 
             <div class="map-point" style="top: 55%; left: 33%;">
-                <div class="pulse-ring"></div>
-                <div class="point-dot"></div>
-                <div class="point-label">BELÉM</div>
+                <div class="pulse-ring"></div><div class="point-dot"></div>
+                <div class="point-label" data-i18n="map_belem">BELÉM</div>
             </div>
 
             <div class="map-point" style="top: 42%; left: 78%;">
-                <div class="pulse-ring"></div>
-                <div class="point-dot"></div>
-                <div class="point-label">SHANGHAI</div>
+                <div class="pulse-ring"></div><div class="point-dot"></div>
+                <div class="point-label" data-i18n="map_shanghai">SHANGHAI</div>
             </div>
-
         </div>
-
-        <!-- <div class="map-stats">
-            <div class="map-stat-item">
-                <h3>54</h3>
-                <p>Active Routes</p>
-            </div>
-            <div class="map-stat-item">
-                <h3>12</h3>
-                <p>Partner Ports</p>
-            </div>
-            <div class="map-stat-item">
-                <h3>24/7</h3>
-                <p>Satellite Tracking</p>
-            </div>
-        </div> -->
     </section>
 
     <div id="inquiryModal" class="modal-overlay">
         <div class="modal-terminal">
             <div class="modal-header">
-                <span><i class="fas fa-envelope-open-text"></i> SECURE CHANNEL // ENCRYPTED</span>
+                <span><i class="fas fa-envelope-open-text"></i> <span data-i18n="mod_enc">SECURE CHANNEL // ENCRYPTED</span></span>
                 <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="modal-body">
-                <p class="modal-instruction">DIRECT LINE TO TRADING DESK</p>
+                <p class="modal-instruction" data-i18n="mod_inst">DIRECT LINE TO TRADING DESK</p>
                 <form class="inquiry-form">
                     <div class="input-row">
-                        <input type="text" placeholder="COMPANY NAME" class="terminal-input">
-                        <input type="text" placeholder="CONTACT PERSON" class="terminal-input">
+                        <input type="text" placeholder="COMPANY NAME" class="terminal-input" data-i18n-placeholder="mod_ph_comp">
+                        <input type="text" placeholder="CONTACT PERSON" class="terminal-input" data-i18n-placeholder="mod_ph_cont">
                     </div>
-                    <input type="email" placeholder="OFFICIAL EMAIL" class="terminal-input">
+                    <input type="email" placeholder="OFFICIAL EMAIL" class="terminal-input" data-i18n-placeholder="mod_ph_email">
                     <select class="terminal-input">
-                        <option>SELECT INQUIRY TYPE</option>
-                        <option>IMPORT REQUEST (FCL)</option>
-                        <option>EXPORT LOGISTICS</option>
-                        <option>LEGAL CONSULTATION</option>
+                        <option data-i18n="mod_opt_sel">SELECT INQUIRY TYPE</option>
+                        <option data-i18n="mod_opt_imp">IMPORT REQUEST (FCL)</option>
+                        <option data-i18n="mod_opt_exp">EXPORT LOGISTICS</option>
+                        <option data-i18n="mod_opt_leg">LEGAL CONSULTATION</option>
                     </select>
-                    <textarea placeholder="MESSAGE / CARGO DETAILS" class="terminal-input" rows="3"></textarea>
+                    <textarea placeholder="MESSAGE / CARGO DETAILS" class="terminal-input" rows="3" data-i18n-placeholder="mod_ph_msg"></textarea>
                     
                     <button type="button" class="terminal-action-btn full-width" onclick="submitInquiry()">
-                        <i class="fas fa-paper-plane"></i> TRANSMIT REQUEST
+                        <i class="fas fa-paper-plane"></i> <span data-i18n="mod_btn">TRANSMIT REQUEST</span>
                     </button>
                 </form>
             </div>
@@ -345,104 +316,88 @@
     </div>
 
     <footer class="global-footer">
-
         <div class="footer-main">
             <div class="footer-container">
-
                 <div class="footer-brand">
                     <div class="footer-logo brand-font">7 SEAS <span>Global</span></div>
-                    <p class="brand-desc">
+                    <p class="brand-desc" data-i18n="foot_desc">
                         The strategic trading arm of <strong>Hafen Consolidators</strong>.
                         Engineering commerce through sovereign legal frameworks and high-precision logistics.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-btn"><i class="fab fa-threads"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61586923385838&locale=pt_BR" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/7seas_trading/" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.threads.com/@7seas_trading?xmt=AQF0WruUV5bLTO1IVaiYZS3KqEqyOazqEJtS-EfBRG7Tbfg" class="social-btn"><i class="fab fa-threads"></i></a>
                     </div>
-
                     <div class="brand-contacts">
-                        <span class="contact-title">24/7 DISPATCH LINES</span>
-                        
-                        <a href="tel:+447594716370" class="contact-row">
-                            <i class="fas fa-phone-alt"></i> <span>+44 7594 716370</span>
-                        </a>
-
-                        <a href="tel:+48732099369" class="contact-row">
-                            <i class="fas fa-phone-alt"></i> <span>+48 73 2099 369</span>
-                        </a>
-
-                        <a href="tel:+40312297776" class="contact-row">
-                            <i class="fas fa-phone-alt"></i> <span>+40 31 2297 776</span>
-                        </a>
+                        <span class="contact-title" data-i18n="foot_dispatch">24/7 DISPATCH LINES</span>
+                        <a href="tel:+447594716370" class="contact-row"><i class="fas fa-phone-alt"></i> <span>+44 7594 716370</span></a>
+                        <a href="tel:+48732099369" class="contact-row"><i class="fas fa-phone-alt"></i> <span>+48 73 2099 369</span></a>
+                        <a href="tel:+40312297776" class="contact-row"><i class="fas fa-phone-alt"></i> <span>+40 31 2297 776</span></a>
                     </div>
                 </div>
 
                 <div class="footer-col" id="governance-docs">
-                    <h4><i class="fas fa-map-marker-alt" style="color: var(--gold-primary);"></i> Global Hubs</h4>
+                    <h4><i class="fas fa-map-marker-alt" style="color: var(--gold-primary);"></i> <span data-i18n="foot_hubs">Global Hubs</span></h4>
                     <ul class="hub-list">
                         <li>
-                            <span class="hub-city">LONDON, UK</span>
-                            <span class="hub-type">Headquarters & Legal</span>
+                            <span class="hub-city" data-i18n="map_london">LONDON, UK</span>
+                            <span class="hub-type" data-i18n="foot_hub1">Headquarters & Legal</span>
                         </li>
                         <li>
                             <span class="hub-city">PRAGUE, CZ</span>
-                            <span class="hub-type">European Rail Gateway</span>
+                            <span class="hub-type" data-i18n="foot_hub2">European Rail Gateway</span>
                         </li>
-                        
                         <li title="Calle 50, ZIP 0801">
                             <span class="hub-city">PANAMA CITY, PA</span>
-                            <span class="hub-type">F&F Tower, 41st Floor</span>
+                            <span class="hub-type" data-i18n="foot_hub3">F&F Tower, 41st Floor</span>
                         </li>
-                        
                         <li>
-                            <span class="hub-city">BELÉM, BR</span>
-                            <span class="hub-type">Atlantic Export Hub</span>
+                            <span class="hub-city" data-i18n="map_belem">BELÉM, BR</span>
+                            <span class="hub-type" data-i18n="foot_hub4">Atlantic Export Hub</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Governance</h4>
+                    <h4 data-i18n="foot_gov">Governance</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Standard Trading Conditions</a></li>
-                        <li><a href="#">Bill of Lading Terms</a></li>
-                        <li><a href="#">SOLAS VGM Policy</a></li>
-                        <li><a href="#">Anti-Bribery & Corruption</a></li>
-                        <li><a href="#">Modern Slavery Statement</a></li>
+                        <li><a href="#" data-i18n="foot_gov1">Standard Trading Conditions</a></li>
+                        <li><a href="#" data-i18n="foot_gov2">Bill of Lading Terms</a></li>
+                        <li><a href="#" data-i18n="foot_gov3">SOLAS VGM Policy</a></li>
+                        <li><a href="#" data-i18n="foot_gov4">Anti-Bribery & Corruption</a></li>
+                        <li><a href="#" data-i18n="foot_gov5">Modern Slavery Statement</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Client Access</h4>
+                    <h4 data-i18n="foot_client">Client Access</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Client Portal Login <i class="fas fa-lock" style="font-size: 0.6rem;"></i></a>
-                        </li>
-                        <li><a href="#">Track Shipment</a></li>
-                        <li><a href="#">Submit Booking</a></li>
-                        <li><a href="#">Report Incident</a></li>
+                        <li><a href="#"><span data-i18n="foot_cl1">Client Portal Login</span> <i class="fas fa-lock" style="font-size: 0.6rem;"></i></a></li>
+                        <li><a href="#" data-i18n="foot_cl2">Track Shipment</a></li>
+                        <li><a href="#" data-i18n="foot_cl3">Submit Booking</a></li>
+                        <li><a href="#" data-i18n="foot_cl4">Report Incident</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
 
         <div class="system-bar">
             <div class="sys-container">
                 <div class="sys-item">
-                    <span>© 2026 7 SEAS IMPORT AND EXPORT COMPANY. ALL RIGHTS RESERVED.</span>
+                    <span data-i18n="foot_copy">© 2026 7 SEAS IMPORT AND EXPORT COMPANY. ALL RIGHTS RESERVED.</span>
                 </div>
                 <div class="sys-item right-align">
-                    <span class="sys-status"><span class="pulse-dot-small"></span> SERVER STATUS:
-                        <strong>OPERATIONAL</strong></span>
+                    <span class="sys-status"><span class="pulse-dot-small"></span> <span data-i18n="foot_status_label">SERVER STATUS:</span>
+                        <strong data-i18n="foot_status_val">OPERATIONAL</strong></span>
                     <span class="sys-version">SYS v.4.0.2</span>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
