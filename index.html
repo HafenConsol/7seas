@@ -66,11 +66,18 @@
     </div>
 
     <header>
-        <div class="logo-container brand-font">
-            <div class="logo-main">7 SEAS <span>Global</span></div>
-            <div class="logo-sub">Strategic Arm of Hafen Consolidators</div>
-        </div>
+    <div class="logo-container brand-font">
+        <div class="logo-main desktop-logo">7 SEAS <span>Global</span></div>
+        <div class="logo-sub desktop-logo">Strategic Arm of Hafen Consolidators</div>
+        
+        <img src="img/logo.png" alt="7 Seas Logo" class="mobile-logo">
+    </div>
 
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
         <nav>
             <a href="#intelligence" data-i18n="nav_intel">Intelligence</a>
             <a href="#compliance" data-i18n="nav_comp">Compliance</a>
@@ -88,7 +95,8 @@
         <div class="cta-area">
             <button class="btn-inquiry" onclick="openModal()" data-i18n="nav_cta">Private Inquiry</button>
         </div>
-    </header>
+    </div>
+</header>
 
     <section class="hero-section" id="intelligence">
         <div class="video-bg">
